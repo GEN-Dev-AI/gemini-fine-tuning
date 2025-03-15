@@ -1,7 +1,11 @@
+import os
 from google import genai
 import streamlit as st
+from dotenv import load_dotenv
 
-API_KEY = "AIzaSyAm263kN_YF2VbxLAiVuA3QzFwKKCujvTk"
+load_dotenv()  
+API_KEY = os.getenv("GOOGLE_API_KEY")
+
 client = genai.Client(api_key=API_KEY) 
 model_name = "gemini-1.5-flash-001-tuning"
 
